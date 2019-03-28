@@ -5,7 +5,7 @@ export default (s) => {
     if (cur.length === 4 && cur.join('') === s) {
       // 边界   如果元素是0开头 则当前元素只能是0  01,00非法 0合法
       let filt = cur.every(item => {
-        if (item.length != 1 && item[0] == 0) return false
+        if (item.length !== 1 && Number(item[0]) === 0) return false
         return true
       })
       filt && r.push(cur.join('.'))
